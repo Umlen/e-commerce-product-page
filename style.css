@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100%;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 160px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid hsl(223deg, 64%, 98%);
+}
+
+.navigation--logo {
+  margin-right: 50px;
+}
+
+.navigation--mainmenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-right: auto;
+}
+.navigation--mainmenu li:not(:last-child) {
+  padding-right: 40px;
+}
+
+.navigation--accountmenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.navigation--accountmenu li:not(:last-child) {
+  padding-right: 40px;
+}
+
+.navigation--accountmenu_avatar {
+  width: 50px;
+  height: auto;
+}
+
+.maincontent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 90px 210px;
+}
+
+.maincontent--gallery {
+  padding-right: 130px;
+}
+
+.maincontent--gallery_imgfull {
+  width: 450px;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.maincontent--gallery_imglist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.maincontent--gallery_imglist img {
+  width: 90px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.maincontent--productinfo_companyname {
+  color: hsl(26deg, 100%, 55%);
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 20px;
+}
+
+.maincontent--productinfo_productname {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.maincontent--productinfo_description {
+  margin-bottom: 30px;
+  line-height: 1.7rem;
+}
+
+.maincontent--productinfo_price {
+  margin-bottom: 40px;
+}
+
+.maincontent--productinfo_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer {
+  text-align: center;
+  font-size: small;
+}/*# sourceMappingURL=style.css.map */
