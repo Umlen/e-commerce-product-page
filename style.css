@@ -13,6 +13,7 @@ html {
 body {
   min-height: 100%;
   font-family: "Kumbh Sans", sans-serif;
+  color: hsl(219deg, 9%, 45%);
 }
 
 .navigation {
@@ -20,8 +21,8 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  align-items: baseline;
   margin: 30px 160px;
-  padding-bottom: 20px;
   border-bottom: 2px solid hsl(223deg, 64%, 98%);
 }
 
@@ -37,8 +38,20 @@ body {
   list-style-type: none;
   margin-right: auto;
 }
+.navigation--mainmenu li {
+  padding-bottom: 20px;
+  border-bottom: 3px solid transparent;
+}
 .navigation--mainmenu li:not(:last-child) {
-  padding-right: 40px;
+  margin-right: 40px;
+  height: 100%;
+}
+.navigation--mainmenu li:hover {
+  border-bottom: 3px solid hsl(26deg, 100%, 55%);
+}
+.navigation--mainmenu a {
+  text-decoration: none;
+  color: hsl(219deg, 9%, 45%);
 }
 
 .navigation--accountmenu {
@@ -52,9 +65,27 @@ body {
   padding-right: 40px;
 }
 
+.navigation--accountmenu_cart {
+  fill: #69707D;
+}
+.navigation--accountmenu_cart:hover {
+  cursor: pointer;
+}
+.navigation--accountmenu_cart:active {
+  fill: hsl(220deg, 13%, 13%);
+}
+
 .navigation--accountmenu_avatar {
   width: 50px;
   height: auto;
+  border-radius: 100%;
+  border: 2px solid transparent;
+}
+.navigation--accountmenu_avatar:hover {
+  cursor: pointer;
+}
+.navigation--accountmenu_avatar:active {
+  border-color: hsl(26deg, 100%, 55%);
 }
 
 .maincontent {
@@ -88,6 +119,12 @@ body {
   height: auto;
   border-radius: 10px;
 }
+.maincontent--gallery_imglist img:hover {
+  cursor: pointer;
+}
+.maincontent--gallery_imglist img:active {
+  opacity: 0.5;
+}
 
 .maincontent--productinfo_companyname {
   color: hsl(26deg, 100%, 55%);
@@ -97,7 +134,9 @@ body {
 }
 
 .maincontent--productinfo_productname {
+  color: hsl(220deg, 13%, 13%);
   font-size: 2rem;
+  font-weight: 700;
   line-height: 2.2rem;
   margin-bottom: 40px;
 }
@@ -105,17 +144,111 @@ body {
 .maincontent--productinfo_description {
   margin-bottom: 30px;
   line-height: 1.7rem;
+  text-align: justify;
 }
 
-.maincontent--productinfo_price {
-  margin-bottom: 40px;
-}
-
-.maincontent--productinfo_buttons {
+.maincontent--productinfo--price {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.maincontent--productinfo--price--current {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  color: hsl(220deg, 13%, 13%);
+  margin-bottom: 20px;
+}
+
+.maincontent--productinfo--price--current_discount {
+  margin-right: auto;
+  margin-left: 20px;
+  padding: 5px 10px;
+  background-color: hsl(25deg, 100%, 94%);
+  font-size: 1rem;
+  color: hsl(26deg, 100%, 55%);
+  border-radius: 5px;
+}
+
+.maincontent--productinfo--price_old {
+  color: hsl(220deg, 14%, 75%);
+  text-decoration: line-through;
+}
+
+.maincontent--productinfo--buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.maincontent--productinfo--buttons--counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.maincontent--productinfo--buttons--counter_minus {
+  background-color: hsl(223deg, 64%, 98%);
+  border-radius: 5px 0 0 5px;
+  padding: 10px 15px;
+}
+.maincontent--productinfo--buttons--counter_minus:hover {
+  cursor: pointer;
+}
+.maincontent--productinfo--buttons--counter_minus:active {
+  opacity: 0.7;
+}
+
+.maincontent--productinfo--buttons--counter_amount {
+  color: hsl(220deg, 13%, 13%);
+  background-color: hsl(223deg, 64%, 98%);
+  padding: 10px 15px;
+}
+
+.maincontent--productinfo--buttons--counter_plus {
+  background-color: hsl(223deg, 64%, 98%);
+  border-radius: 0 5px 5px 0;
+  padding: 10px 15px;
+}
+.maincontent--productinfo--buttons--counter_plus:hover {
+  cursor: pointer;
+}
+.maincontent--productinfo--buttons--counter_plus:active {
+  opacity: 0.7;
+}
+
+.maincontent--productinfo--buttons_add {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  font-size: 0.9rem;
+  background-color: hsl(26deg, 100%, 55%);
+  padding: 10px 50px;
+  border-radius: 5px;
+  box-shadow: 0 20px 35px -15px hsl(26deg, 100%, 55%);
+}
+.maincontent--productinfo--buttons_add svg {
+  margin-right: 10px;
+  transform: scale(0.9);
+}
+.maincontent--productinfo--buttons_add:hover {
+  cursor: pointer;
+}
+.maincontent--productinfo--buttons_add:active {
+  opacity: 0.7;
 }
 
 .footer {
