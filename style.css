@@ -14,6 +14,8 @@ body {
   min-height: 100%;
   font-family: "Kumbh Sans", sans-serif;
   color: hsl(219deg, 9%, 45%);
+  display: flex;
+  flex-direction: column;
 }
 
 .navigation {
@@ -46,12 +48,15 @@ body {
   margin-right: 40px;
   height: 100%;
 }
-.navigation--mainmenu li:hover {
+.navigation--mainmenu li:hover, .navigation--mainmenu li:active {
   border-bottom: 3px solid hsl(26deg, 100%, 55%);
 }
 .navigation--mainmenu a {
   text-decoration: none;
   color: hsl(219deg, 9%, 45%);
+}
+.navigation--mainmenu a:active {
+  color: hsl(220deg, 13%, 13%);
 }
 
 .navigation--accountmenu {
@@ -62,7 +67,7 @@ body {
   list-style-type: none;
 }
 .navigation--accountmenu li:not(:last-child) {
-  padding-right: 40px;
+  margin-right: 40px;
 }
 
 .navigation--accountmenu_cart {
@@ -93,15 +98,16 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 90px 210px;
+  margin: 0 210px 0 210px;
+  flex-grow: 1;
 }
 
 .maincontent--gallery {
-  padding-right: 130px;
+  margin-right: 130px;
 }
 
 .maincontent--gallery_imgfull {
-  width: 450px;
+  max-width: 450px;
   height: auto;
   border-radius: 15px;
   margin-bottom: 30px;
@@ -254,4 +260,59 @@ body {
 .footer {
   text-align: center;
   font-size: small;
+  flex-shrink: 0;
+  margin-top: 40px;
+}
+
+@media (max-width: 1280px) {
+  .maincontent {
+    margin: 0 190px 0 190px;
+  }
+  .maincontent--gallery {
+    margin-right: 90px;
+  }
+  .maincontent--productinfo--buttons_add {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .navigation {
+    margin: 30px 60px;
+  }
+  .maincontent {
+    margin: 0 90px 0 90px;
+  }
+  .maincontent--gallery {
+    margin-right: 55px;
+  }
+}
+@media (max-width: 810px) {
+  .navigation {
+    margin: 30px 50px;
+  }
+  .navigation--logo {
+    margin-right: 40px;
+  }
+  .navigation--mainmenu li:not(:last-child) {
+    margin-right: 20px;
+  }
+  .navigation--accountmenu li:not(:last-child) {
+    margin-right: 20px;
+  }
+  .maincontent {
+    flex-direction: column;
+  }
+  .maincontent--gallery {
+    margin: 90px 0;
+  }
+  .maincontent--productinfo--price {
+    align-items: flex-end;
+  }
+  .maincontent--productinfo--buttons {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .maincontent--productinfo--buttons_add {
+    margin-top: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
