@@ -16,6 +16,7 @@ body {
   color: hsl(219deg, 9%, 45%);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .navigation {
@@ -104,6 +105,7 @@ body {
 
 .maincontent--gallery {
   margin-right: 130px;
+  position: relative;
 }
 
 .maincontent--gallery_imgfull {
@@ -111,6 +113,26 @@ body {
   height: auto;
   border-radius: 15px;
   margin-bottom: 30px;
+}
+
+.maincontent--gallery_prevbtn, .maincontent--gallery_nextbtn {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.maincontent--gallery_nextbtn {
+  left: auto;
+  right: 1rem;
 }
 
 .maincontent--gallery_imglist {
@@ -264,6 +286,21 @@ body {
   margin-top: 40px;
 }
 
+/*For Mobiles*/
+.mobilemenu--list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background-color: hsl(0deg, 0%, 100%);
+  z-index: 10;
+}
+
+.hide {
+  display: none;
+}
+
 @media (max-width: 1280px) {
   .maincontent {
     margin: 0 190px 0 190px;
@@ -314,5 +351,62 @@ body {
   }
   .maincontent--productinfo--buttons_add {
     margin-top: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .navigation {
+    margin: 0 20px;
+  }
+  /* .navigation--logo {
+       margin-right: 40px;
+   }
+
+   .navigation--accountmenu {
+       & li:not(:last-child) {
+           margin-right: 20px;
+       }
+   }*/
+  .maincontent {
+    margin: 0;
+  }
+  .maincontent--gallery {
+    margin: 0;
+  }
+  .maincontent--gallery_imgfull {
+    max-width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+  .maincontent--productinfo {
+    margin: 20px 40px;
+  }
+  .maincontent--productinfo_productname {
+    margin-bottom: 20px;
+  }
+  .maincontent--productinfo--price {
+    flex-direction: row;
+    align-items: center;
+  }
+  .maincontent--productinfo--price--current {
+    margin-bottom: 0;
+  }
+  .maincontent--productinfo--buttons {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .maincontent--productinfo--buttons--counter {
+    width: 100%;
+  }
+  .maincontent--productinfo--buttons--counter_amount {
+    width: 100%;
+    text-align: center;
+  }
+  .maincontent--productinfo--buttons_add {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  .footer {
+    font-size: xx-small;
   }
 }/*# sourceMappingURL=style.css.map */
