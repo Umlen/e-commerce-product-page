@@ -5,11 +5,13 @@ window.onload = () => {
 
     counter();
     mobileMenuOpen();
+    mobileMenuClose();
+    openCloseCart();
 }
 
 
 function mobileRes() {
-    document.getElementById('navigation--mobilemenu_icon').classList.remove('hide');
+    document.getElementById('navigation--mobilemenu_openicon').classList.remove('hide');
     document.getElementById('gallery-prevbtn').classList.remove('hide');
     document.getElementById('gallery-nextbtn').classList.remove('hide');
     document.querySelector('.navigation--mainmenu').classList.add('hide');
@@ -17,9 +19,18 @@ function mobileRes() {
 }
 
 function mobileMenuOpen() {
-    let openMenuIcon = document.getElementById('navigation--mobilemenu_icon');
+    let openMenuIcon = document.getElementById('navigation--mobilemenu_openicon');
     openMenuIcon.onclick = function() {
         document.querySelector('.mobilemenu').classList.remove('hide');
+        document.body.classList.add('darkfilter');
+    }
+}
+
+function mobileMenuClose() {
+    let closeMenuIcon = document.getElementById('navigation--mobilemenu_closeicon');
+    closeMenuIcon.onclick = function() {
+        document.querySelector('.mobilemenu').classList.add('hide');
+        document.body.classList.remove('darkfilter');
     }
 }
 
@@ -47,5 +58,13 @@ function counter() {
     plusBtn.onclick = function() {
         number++;
         count.innerText = number;
+    }
+}
+
+function openCloseCart() {
+    let cartIcon = document.querySelector('.navigation--accountmenu_carticon');
+    let cart = document.getElementById('cart');
+    cartIcon.onclick = function() {
+        cart.classList.toggle('hide');
     }
 }

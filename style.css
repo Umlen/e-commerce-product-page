@@ -66,19 +66,45 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style-type: none;
+  position: relative;
 }
-.navigation--accountmenu li:not(:last-child) {
+.navigation--accountmenu li:first-child {
   margin-right: 40px;
 }
 
-.navigation--accountmenu_cart {
+.navigation--accountmenu_carticon {
   fill: #69707D;
 }
-.navigation--accountmenu_cart:hover {
+.navigation--accountmenu_carticon:hover {
   cursor: pointer;
 }
-.navigation--accountmenu_cart:active {
+.navigation--accountmenu_carticon:active {
   fill: hsl(220deg, 13%, 13%);
+}
+
+.navigation--accountmenu--cart {
+  position: absolute;
+  top: 60px;
+  right: -50px;
+  background-color: hsl(0deg, 0%, 100%);
+  width: 360px;
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px -10px hsl(219deg, 9%, 45%);
+  z-index: 1000;
+}
+
+.navigation--accountmenu--cart_header {
+  padding: 20px 25px;
+  color: hsl(220deg, 13%, 13%);
+  font-weight: 700;
+  border-bottom: 2px solid hsl(223deg, 64%, 98%);
+}
+
+.navigation--accountmenu--cart_text {
+  text-align: center;
+  font-weight: 700;
+  padding-top: 15%;
 }
 
 .navigation--accountmenu_avatar {
@@ -295,6 +321,30 @@ body {
   height: 100%;
   background-color: hsl(0deg, 0%, 100%);
   z-index: 10;
+  padding: 25px;
+  list-style-type: none;
+}
+.mobilemenu--list li:first-child {
+  margin-bottom: 50px;
+}
+.mobilemenu--list li:not(:last-child) {
+  margin-bottom: 30px;
+}
+.mobilemenu--list li a {
+  text-decoration: none;
+  color: hsl(220deg, 13%, 13%);
+  font-weight: 700;
+}
+
+.darkfilter:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
 }
 
 .hide {
@@ -333,7 +383,7 @@ body {
   .navigation--mainmenu li:not(:last-child) {
     margin-right: 20px;
   }
-  .navigation--accountmenu li:not(:last-child) {
+  .navigation--accountmenu li:first-child {
     margin-right: 20px;
   }
   .maincontent {
@@ -357,15 +407,6 @@ body {
   .navigation {
     margin: 0 20px;
   }
-  /* .navigation--logo {
-       margin-right: 40px;
-   }
-
-   .navigation--accountmenu {
-       & li:not(:last-child) {
-           margin-right: 20px;
-       }
-   }*/
   .maincontent {
     margin: 0;
   }

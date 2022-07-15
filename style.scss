@@ -38,10 +38,6 @@ body {
     justify-content: space-between;
 }
 
-@mixin lists-decoration() {
-    list-style-type: none;
-}
-
 .navigation {
     @include flex-container();
     align-items: baseline;
@@ -55,7 +51,7 @@ body {
 
 .navigation--mainmenu {
     @include flex-container();
-    @include lists-decoration();
+    list-style-type: none;
     margin-right: auto;
     & li {
         padding-bottom: 20px;
@@ -79,13 +75,14 @@ body {
 
 .navigation--accountmenu {
     @include flex-container();
-    @include lists-decoration();
-    & li:not(:last-child) {
+    list-style-type: none;
+    position: relative;
+    & li:first-child {
         margin-right: 40px;
     }
 }
 
-.navigation--accountmenu_cart {
+.navigation--accountmenu_carticon {
     fill: #69707D;
     &:hover {
         cursor: pointer;
@@ -93,6 +90,31 @@ body {
     &:active {
         fill: $primary-dark-blue;
     }
+}
+
+.navigation--accountmenu--cart {
+    position: absolute;
+    top: 60px;
+    right: -50px;
+    background-color: $simple-white;
+    width: 360px;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px -10px $primary-dark-gray;
+    z-index: 1000;
+}
+
+.navigation--accountmenu--cart_header {
+    padding: 20px 25px;
+    color: $primary-dark-blue;
+    font-weight: 700;
+    border-bottom: 2px solid $secondary-light-gray;
+}
+
+.navigation--accountmenu--cart_text {
+    text-align: center;
+    font-weight: 700;
+    padding-top: 15%;
 }
 
 .navigation--accountmenu_avatar {
@@ -145,7 +167,7 @@ body {
 
 .maincontent--gallery_imglist {
     @include flex-container();
-    @include lists-decoration();
+    list-style-type: none;
     & img {
         width: 90px;
         height: auto;
@@ -286,7 +308,33 @@ body {
     height: 100%;
     background-color: $simple-white;
     z-index: 10;
+    padding: 25px;
+    list-style-type: none;
+    & li {
+        &:first-child {
+            margin-bottom: 50px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+        & a {
+            text-decoration: none;
+            color: $primary-dark-blue;
+            font-weight: 700;
+        }
+    }
 }
+
+.darkfilter:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 2;
+  }
 
 .hide {
     display: none;
@@ -340,7 +388,7 @@ body {
     }
 
     .navigation--accountmenu {
-        & li:not(:last-child) {
+        & li:first-child {
             margin-right: 20px;
         }
     }
@@ -372,16 +420,6 @@ body {
     .navigation {
         margin: 0 20px;
     }
-
-   /* .navigation--logo {
-        margin-right: 40px;
-    }
-
-    .navigation--accountmenu {
-        & li:not(:last-child) {
-            margin-right: 20px;
-        }
-    }*/
 
     .maincontent {
         margin: 0;
