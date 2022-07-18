@@ -98,7 +98,7 @@ body {
     right: -50px;
     background-color: $simple-white;
     width: 360px;
-    height: 200px;
+    min-height: 240px;
     border-radius: 5px;
     box-shadow: 0 10px 20px -10px $primary-dark-gray;
     z-index: 1000;
@@ -114,7 +114,23 @@ body {
 .navigation--accountmenu--cart_text {
     text-align: center;
     font-weight: 700;
-    padding-top: 15%;
+    padding-top: 20%;
+}
+
+.navigation--accountmenu--cart--item {
+    @include flex-container();
+    margin: 20px;
+}
+
+.navigation--accountmenu--cart--item_img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.navigation--accountmenu--cart--item_total {
+    font-weight: bold;
+    color: $primary-dark-blue
 }
 
 .navigation--accountmenu_avatar {
@@ -419,6 +435,16 @@ body {
 
     .navigation {
         margin: 0 20px;
+    }
+
+    .navigation--accountmenu {
+        position: static;
+    }
+    
+    .navigation--accountmenu--cart {
+        left: 5px;
+        right: 5px;
+        width: auto;
     }
 
     .maincontent {
