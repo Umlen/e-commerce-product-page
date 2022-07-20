@@ -121,9 +121,40 @@ body {
   border-radius: 5px;
 }
 
-.navigation--accountmenu--cart--item_total {
+.navigation--accountmenu--cart--item_cost {
   font-weight: bold;
   color: hsl(220deg, 13%, 13%);
+  line-height: 2rem;
+}
+
+.navigation--accountmenu--cart--item_delbtn:hover {
+  cursor: pointer;
+}
+
+.navigation--accountmenu--cart_total {
+  padding: 20px 25px;
+  color: hsl(26deg, 100%, 55%);
+  font-weight: 700;
+  text-align: right;
+  border-top: 2px solid hsl(223deg, 64%, 98%);
+  border-bottom: 2px solid hsl(223deg, 64%, 98%);
+}
+
+.navigation--accountmenu--cart--checkoutbtn {
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  font-size: 0.9rem;
+  background-color: hsl(26deg, 100%, 55%);
+  margin: 20px;
+  padding: 10px 50px;
+  border-radius: 5px;
+}
+.navigation--accountmenu--cart--checkoutbtn:hover {
+  cursor: pointer;
+}
+.navigation--accountmenu--cart--checkoutbtn:active {
+  opacity: 0.7;
 }
 
 .navigation--accountmenu_avatar {
@@ -328,7 +359,14 @@ body {
   text-align: center;
   font-size: small;
   flex-shrink: 0;
-  margin-top: 40px;
+  margin: 40px auto 10px auto;
+}
+.footer a {
+  color: hsl(26deg, 100%, 55%);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: hsl(220deg, 13%, 13%);
 }
 
 /*For Mobiles*/
